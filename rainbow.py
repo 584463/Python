@@ -1,4 +1,4 @@
-import time, sys
+import time, os
 import bext
 
 print("Rainbow Time!")
@@ -36,8 +36,8 @@ while True:
         indent-=1
     
     
-    if indent == 100:
+    if indent == os.get_terminal_size()[0] - 12:
         indentIncreasing = False
-        if indent == 0:
-            indentIncreasing = True
-    time.sleep(0.1)
+    if indent == 0:
+        indentIncreasing = True
+    time.sleep(0.03)
